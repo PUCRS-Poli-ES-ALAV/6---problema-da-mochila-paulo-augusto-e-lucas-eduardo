@@ -62,19 +62,19 @@ public class Fibonacci {
         System.out.println("Fibonacci Recursivo:");
         for (int n : testValues) {
             recCalls = 0;
-            measureExecutionTime("FiboRec", n, () -> System.out.println("Resultado: " + fiboRec(n)));
-            System.out.println("Chamadas recursivas: " + recCalls);
+            measureExecutionTime("Fibonacci Recursivo", n, () -> System.out.println("Resultado: " + fiboRec(n)));
+            System.out.println("Chamadas no método recursivo: " + recCalls);
         }
 
         System.out.println("\nFibonacci (Iterativo):");
         for (int n : testValues) {
-            measureExecutionTime("FiboIter", n, () -> System.out.println("Resultado: " + fiboIter(n)));
-            System.out.println("Iterações: " + iterIterations);
+            measureExecutionTime("Fibonacci Iterativo", n, () -> System.out.println("Resultado: " + fiboIter(n)));
+            System.out.println("Chamadas no método iterativo: " + iterIterations);
         }
 
         System.out.println("\nFibonacci Memoização:");
         for (int n : testValues) {
-            measureExecutionTime("MemoizedFibo", n, () -> System.out.println("Resultado: " + memoizedFibo(n)));
+            measureExecutionTime("FIbonacci Memoizado", n, () -> System.out.println("Resultado: " + memoizedFibo(n)));
             System.out.println("Chamadas no método memoizado: " + memoCalls);
         }
     }
