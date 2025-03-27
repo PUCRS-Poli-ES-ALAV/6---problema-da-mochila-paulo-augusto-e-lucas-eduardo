@@ -53,7 +53,7 @@ public class Fibonacci {
         method.run();
         long endTime = System.nanoTime();
         double elapsedTimeMs = (endTime - startTime) / 1_000_000.0;
-        System.out.println(String.format("Método: %s, n=%d, Tempo de execução: %.3f ms", methodName, n, elapsedTimeMs));
+        System.out.println(String.format("Método: %s, Valor de n: %d, Tempo de execução: %.3f ms", methodName, n, elapsedTimeMs));
     }
 
     public static void main(String[] args) {
