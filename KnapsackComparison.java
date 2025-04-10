@@ -40,7 +40,9 @@ public class KnapsackComparison {
         method.run();
         long endTime = System.nanoTime();
         double elapsedTimeMs = (endTime - startTime) / 1_000_000.0;
-        System.out.println(String.format("Método: %s, Tempo de execução: %.3f ms", methodName, elapsedTimeMs));
+        System.out.println(String.format(
+                "Método: %s, Tempo de execução: %.3f ms, Iterações: %d, Instruções: %d",
+                methodName, elapsedTimeMs, iterationCount, iterationCount));
     }
 
     public static void main(String[] args) {
@@ -61,14 +63,12 @@ public class KnapsackComparison {
         measureExecutionTime("Divide and Conquer", () -> {
             int maxValueDivideAndConquer = knapsackDivideAndConquer(weights, values, capacity, numItems);
             System.out.println("Divide and Conquer - Valor máximo que pode ser carregado: " + maxValueDivideAndConquer);
-            System.out.println("Divide and Conquer - Número de iterações: " + iterationCount);
         });
 
         iterationCount = 0;
         measureExecutionTime("Dynamic Programming", () -> {
             int maxValueDynamicProgramming = knapsackDynamicProgramming(numItems, capacity, items);
             System.out.println("Dynamic Programming - Valor máximo que pode ser carregado: " + maxValueDynamicProgramming);
-            System.out.println("Dynamic Programming - Número de iterações: " + iterationCount);
         });
     }
 }
